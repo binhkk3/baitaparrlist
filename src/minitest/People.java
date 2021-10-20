@@ -1,20 +1,20 @@
 package minitest;
 
-public class peoPle {
-    private int id ;
+public class People {
+    private int id;
 
     private int age;
     private String name;
 
-    public peoPle() {
+    public People() {
     }
 
-    public peoPle(int age, String name) {
+    public People(int age, String name) {
         this.age = age;
         this.name = name;
     }
 
-    public peoPle(int id, int tuoi, String ten) {
+    public People(int id, int tuoi, String ten) {
         this.id = id;
         this.age = tuoi;
         this.name = ten;

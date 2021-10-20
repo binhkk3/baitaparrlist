@@ -1,21 +1,21 @@
 package minitest;
 
-public class HocVien extends peoPle {
-private double mediumScore;
+public class Student extends People {
+    private double mediumScore;
 
-    public HocVien(int age, String name, double mediumScore) {
+    public Student(int age, String name, double mediumScore) {
         super(age, name);
         this.mediumScore = mediumScore;
     }
 
-    public HocVien() {
+    public Student() {
     }
 
-    public HocVien(double diemTrungBinh) {
+    public Student(double diemTrungBinh) {
         this.mediumScore = diemTrungBinh;
     }
 
-    public HocVien(int id, int tuoi, String ten, double diemTrungBinh) {
+    public Student(int id, int tuoi, String ten, double diemTrungBinh) {
         super(id, tuoi, ten);
         this.mediumScore = diemTrungBinh;
     }
@@ -31,7 +31,7 @@ private double mediumScore;
     @Override
     public String toString() {
         return "HocVien{" +
-                "  tên là = "+ getTen() +
+                "  tên là = " + getTen() +
                 " ,tuổi = " + getAge() +
                 "  DiemTrungBinh=" + mediumScore +
                 "  id = " + getId() +

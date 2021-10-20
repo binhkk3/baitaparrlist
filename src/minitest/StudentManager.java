@@ -2,20 +2,20 @@ package minitest;
 
 import java.util.ArrayList;
 
-public class QuanLyHocSinh implements QuanLy<HocVien> {
-    ArrayList<HocVien> listHocVien;
+public class StudentManager implements Manneger<Student> {
+    ArrayList<Student> listHocVien;
     private int idFirst = 1;
 
-    public QuanLyHocSinh(ArrayList<HocVien> arrayList) {
+    public StudentManager(ArrayList<Student> arrayList) {
         this.listHocVien = arrayList;
     }
 
-    public QuanLyHocSinh() {
+    public StudentManager() {
         listHocVien = new ArrayList<>();
     }
 
     @Override
-    public void them(HocVien hocVien) {
+    public void add(Student hocVien) {
         idFirst++;
         hocVien.setId(idFirst);
         listHocVien.add(hocVien);
@@ -23,7 +23,7 @@ public class QuanLyHocSinh implements QuanLy<HocVien> {
     }
 
     @Override
-    public void in() {
+    public void print() {
         for (int i = 0; i < listHocVien.size(); i++) {
             System.out.println(listHocVien.get(i));
         }
@@ -31,7 +31,7 @@ public class QuanLyHocSinh implements QuanLy<HocVien> {
     }
 
     @Override
-    public int tim(int id) {
+    public int find(int id) {
         for (int i = 0; i < listHocVien.size(); i++) {
             if (listHocVien.get(i).getId() == id) {
                 System.out.println("có " + id + listHocVien.get(i).getTen());
@@ -42,8 +42,8 @@ public class QuanLyHocSinh implements QuanLy<HocVien> {
     }
 
     @Override
-    public void sua(int id, HocVien hocVien) {
-        int index = tim(id);
+    public void edit(int id, Student hocVien) {
+        int index = find(id);
         if (index == -1) {
             System.out.println(" không có để sửa");
         } else {
@@ -53,15 +53,15 @@ public class QuanLyHocSinh implements QuanLy<HocVien> {
     }
 
     @Override
-    public void sapXep() {
+    public void sort() {
         listHocVien.sort((a, b) -> (int) (a.getMediumScore() - b.getMediumScore()));
 // a, b chỉ là công thức số cứ ghi y nguyên;
 
     }
 
     @Override
-    public void xoadi(int id) {
-        int index = tim(id);
+    public void delete(int id) {
+        int index = find(id);
         listHocVien.remove(index);
 
     }
