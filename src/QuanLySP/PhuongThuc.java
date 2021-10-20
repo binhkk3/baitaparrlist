@@ -3,7 +3,7 @@ package QuanLySP;
 public interface PhuongThuc <T> {
     void them(T t);
     void in();
-    void  tim(String ten);
-    void sua();
-
+    int tim(String name);
+    void sua(String name,T t);
+    void xoa(String name);
 }
