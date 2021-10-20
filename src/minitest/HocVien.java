@@ -1,34 +1,39 @@
 package minitest;
 
-public class HocVien extends   Nguoi   {
-private double DiemTrungBinh;
+public class HocVien extends peoPle {
+private double mediumScore;
+
+    public HocVien(int age, String name, double mediumScore) {
+        super(age, name);
+        this.mediumScore = mediumScore;
+    }
 
     public HocVien() {
     }
 
     public HocVien(double diemTrungBinh) {
-        DiemTrungBinh = diemTrungBinh;
+        this.mediumScore = diemTrungBinh;
     }
 
     public HocVien(int id, int tuoi, String ten, double diemTrungBinh) {
         super(id, tuoi, ten);
-        DiemTrungBinh = diemTrungBinh;
+        this.mediumScore = diemTrungBinh;
     }
 
-    public double getDiemTrungBinh() {
-        return DiemTrungBinh;
+    public double getMediumScore() {
+        return mediumScore;
     }
 
-    public void setDiemTrungBinh(double diemTrungBinh) {
-        DiemTrungBinh = diemTrungBinh;
+    public void setMediumScore(double mediumScore) {
+        this.mediumScore = mediumScore;
     }
 
     @Override
     public String toString() {
         return "HocVien{" +
-                " , tên là = "+ getTen() +
-                " ,tuổi = " + getTuoi() +
-                "DiemTrungBinh=" + DiemTrungBinh +
+                "  tên là = "+ getTen() +
+                " ,tuổi = " + getAge() +
+                "  DiemTrungBinh=" + mediumScore +
                 "  id = " + getId() +
                 '}';
 //        "Nguoi{" +

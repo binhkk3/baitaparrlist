@@ -2,17 +2,24 @@ package minitest;
 
 import java.util.ArrayList;
 
-public class QuanLyHocSinh implements QuanLy <HocVien> {
+public class QuanLyHocSinh implements QuanLy<HocVien> {
     ArrayList<HocVien> listHocVien;
-    public QuanLyHocSinh (ArrayList<HocVien> arrayList){
+    private int idFirst = 1;
+
+    public QuanLyHocSinh(ArrayList<HocVien> arrayList) {
         this.listHocVien = arrayList;
     }
-    public QuanLyHocSinh(){
+
+    public QuanLyHocSinh() {
         listHocVien = new ArrayList<>();
     }
+
     @Override
     public void them(HocVien hocVien) {
-listHocVien.add(hocVien);
+        idFirst++;
+        hocVien.setId(idFirst);
+        listHocVien.add(hocVien);
+
     }
 
     @Override
@@ -26,29 +33,28 @@ listHocVien.add(hocVien);
     @Override
     public int tim(int id) {
         for (int i = 0; i < listHocVien.size(); i++) {
-            if(listHocVien.get(i).getId() == id){
-                System.out.println("có " +id +listHocVien.get(i).getTen());
+            if (listHocVien.get(i).getId() == id) {
+                System.out.println("có " + id + listHocVien.get(i).getTen());
                 return i;
             }
-            }
+        }
         return -1;
     }
 
     @Override
     public void sua(int id, HocVien hocVien) {
         int index = tim(id);
-        if (index==-1){
+        if (index == -1) {
             System.out.println(" không có để sửa");
-        }
-        else {
-            listHocVien.set(index,hocVien);
+        } else {
+            listHocVien.set(index, hocVien);
         }
 
     }
 
     @Override
     public void sapXep() {
-listHocVien.sort((a,b)-> (int) (a.getDiemTrungBinh()-b.getDiemTrungBinh()));
+        listHocVien.sort((a, b) -> (int) (a.getMediumScore() - b.getMediumScore()));
 // a, b chỉ là công thức số cứ ghi y nguyên;
 
     }
