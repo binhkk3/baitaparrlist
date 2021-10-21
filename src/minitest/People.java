@@ -14,10 +14,11 @@ public class People {
         this.name = name;
     }
 
-    public People(int id, int tuoi, String ten) {
+
+    public People(int id, int age, String name) {
         this.id = id;
-        this.age = tuoi;
-        this.name = ten;
+        this.age = age;
+        this.name = name;
     }
 
     public int getId() {
@@ -36,12 +37,12 @@ public class People {
         this.age = age;
     }
 
-    public String getTen() {
+    public String getName() {
         return name;
     }
 
-    public void setTen(String ten) {
-        this.name = ten;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

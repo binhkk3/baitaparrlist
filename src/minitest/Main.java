@@ -1,21 +1,48 @@
 package minitest;
 
+import java.util.Scanner;
+
 public class Main {
+    private static TeacherManager teacherManager;
+
     public static void main(String[] args) {
-        StudentManager quanLyHocSinh = new StudentManager();
-        TeacherManager peopleManager = new TeacherManager();
-        quanLyHocSinh.add(new Student(13, "ats", 2.8));
-        quanLyHocSinh.add(new Student(15, "aes", 9.0));
-        quanLyHocSinh.add(new Student(18, "ads", 5.9));
-        peopleManager.add(new Teacher(18, "lfaas", "van"));
-        peopleManager.print();
-        quanLyHocSinh.print();
-        //quanLyHocSinh.xoadi(13);
-        //quanLyHocSinh.in();
-        // quanLyHocSinh.tim(13);
-        // quanLyHocSinh.sua(14,new HocVien(15,19,"binh",8));
-        // quanLyHocSinh.in();
-        // quanLyHocSinh.sapXep();
-        // quanLyHocSinh.in();
+        teacherManager = new TeacherManager();
+        Scanner scanner = new Scanner(System.in);
+        int input;
+        System.out.println("xin chào");
+        do {
+            System.out.println(" nhập 1 để  nhập");
+            System.out.println(" nhâp 2 đê  tìm kiếm");
+            System.out.println("nhâp 3 để  xóa");
+            System.out.println("nhập 4 để  sửa");
+            System.out.println("nhập 5 để  in ra ");
+            System.out.println("nhập 6 để  sắp xếp  ra ");
+            System.out.println("nhập 0 để thoát");
+            input = scanner.nextInt();
+            switch (input) {
+                case 1:
+                    Scanner scanner1 = new Scanner(System.in);
+                    System.out.println("nhập tên giáo viên ");
+                    String name = scanner1.nextLine();
+                    System.out.println(" nhập bộ môn ");
+                    String subject = scanner1.nextLine();
+                    System.out.println("nhập vào tuổi giáo viên ");
+                    int age = scanner1.nextInt();
+                    teacherManager.add(new Teacher(age, name, subject));
+                    System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+                    break;
+                case 2:
+                    System.out.println("nhập vào id bạn muốn tìm ");
+                    int idToFind = scanner.nextInt();
+                    teacherManager.findTeacherById(idToFind);
+                    break;
+                case 5:
+                    teacherManager.print();
+                    break;
+            }
+
+        } while (input != 0);
     }
+
+
 }

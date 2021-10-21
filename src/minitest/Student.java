@@ -1,45 +1,41 @@
 package minitest;
 
 public class Student extends People {
-    private double mediumScore;
+    private double averageScore;
 
-    public Student(int age, String name, double mediumScore) {
+    public Student(int age, String name, double averageScore) {
         super(age, name);
-        this.mediumScore = mediumScore;
+        this.averageScore = averageScore;
     }
 
     public Student() {
     }
 
-    public Student(double diemTrungBinh) {
-        this.mediumScore = diemTrungBinh;
+    public Student(double averageScore) {
+        this.averageScore = averageScore;
     }
 
-    public Student(int id, int tuoi, String ten, double diemTrungBinh) {
-        super(id, tuoi, ten);
-        this.mediumScore = diemTrungBinh;
+    public Student(int id, int age, String name, double averageScore) {
+        super(id, age, name);
+        this.averageScore = averageScore;
     }
 
-    public double getMediumScore() {
-        return mediumScore;
+    public double getAverageScore() {
+        return averageScore;
     }
 
-    public void setMediumScore(double mediumScore) {
-        this.mediumScore = mediumScore;
+    public void setAverageScore(double averageScore) {
+        this.averageScore = averageScore;
     }
 
     @Override
     public String toString() {
         return "HocVien{" +
-                "  tên là = " + getTen() +
+                "  tên là = " + getName() +
                 " ,tuổi = " + getAge() +
-                "  DiemTrungBinh=" + mediumScore +
+                "  DiemTrungBinh=" + averageScore +
                 "  id = " + getId() +
                 '}';
-//        "Nguoi{" +
-//                "id=" + id +
-//                ", tuoi=" + tuoi +
-//                ", ten='" + ten + '\'' +
-//                '}';
+
     }
 }

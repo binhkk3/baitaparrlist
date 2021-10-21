@@ -2,9 +2,9 @@ package minitest;
 
 import java.util.ArrayList;
 
-public class TeacherManager implements Manneger<Teacher> {
+public class TeacherManager implements Manager<Teacher> {
     ArrayList<Teacher> listTeacher;
-    private int idFist = 1;
+    private int idFirst = 1;
 
     public TeacherManager(ArrayList<Teacher> arrayList) {
         this.listTeacher = arrayList;
@@ -16,8 +16,8 @@ public class TeacherManager implements Manneger<Teacher> {
 
     @Override
     public void add(Teacher teacher) {
-        idFist++;
-        teacher.setId(idFist);
+        idFirst++;
+        teacher.setId(idFirst);
         listTeacher.add(teacher);
     }
 
@@ -30,12 +30,11 @@ public class TeacherManager implements Manneger<Teacher> {
 
     }
 
-    @Override
-    public int find(int id) {
+    public int findTeacherById(int id) {
         // find tìm kiếm
         for (int i = 0; i < listTeacher.size(); i++) {
             if (listTeacher.get(i).getId() == id) {
-                System.out.println("có " + id + " có tên là " + listTeacher.get(i).getTen());
+                System.out.println("có " + id + " có tên là " + listTeacher.get(i).getName());
                 return i;
             }
         }
@@ -47,10 +46,6 @@ public class TeacherManager implements Manneger<Teacher> {
 
     }
 
-    @Override
-    public void sort() {
-
-    }
 
     @Override
     public void delete(int id) {

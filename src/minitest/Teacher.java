@@ -12,8 +12,8 @@ public class Teacher extends People {
         this.subject = subject;
     }
 
-    public Teacher(int id, int tuoi, String ten, String subject) {
-        super(id, tuoi, ten);
+    public Teacher(int id, int age, String name, String subject) {
+        super(id, age, name);
         this.subject = subject;
     }
 
@@ -31,10 +31,10 @@ public class Teacher extends People {
     @Override
     public String toString() {
         return "Teacher{" +
-                " ,tên là :" + getTen() +
+                " ,tên là :" + getName() +
                 " , tuổi là :" + getAge() +
-                " ,id là : " + getId() +
-                "subject='" + subject + '\'' +
+                " ,id là: " + getId() +
+                "  ,subject='" + subject + '\'' +
                 '}';
     }
 }
